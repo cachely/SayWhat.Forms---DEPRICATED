@@ -1,4 +1,4 @@
-﻿using SayWhat.Messages;
+﻿using SayWhat.Forms.Messages;
 using System;
 using System.Globalization;
 using System.Reflection;

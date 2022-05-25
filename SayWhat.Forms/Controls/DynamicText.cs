@@ -1,4 +1,5 @@
 ﻿using SayWhat.Forms.Messages;
+using SayWhat.Forms.Utilities;
 using System;
 using Xamarin.Forms;
 
