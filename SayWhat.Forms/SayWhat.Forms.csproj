@@ -6,7 +6,7 @@
     <Company>Ashley Proctor</Company>
 	<Authors>Ashley Proctor</Authors>
     <Description>A framework that utilizes your project's resource files to update your localized strings at will.</Description>
-    <!--<PackageIcon>128.jpg</PackageIcon>-->
+    <PackageIcon>128.jpg</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
@@ -17,6 +17,13 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="128.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

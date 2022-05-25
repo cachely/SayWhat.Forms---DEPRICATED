@@ -6,7 +6,7 @@ namespace SayWhat.Forms.Utilities
 {
     internal static class DynamicLocalizer
     {
-        private static Lazy<ResourceManager> resMgr = new Lazy<ResourceManager>(() => new ResourceManager($"{SayWhat.Settings.BaseName}.{SayWhat.Settings.Culture.Name}", SayWhat.Settings.ResourceAssembly));
+        private static Lazy<ResourceManager> resMgr = new Lazy<ResourceManager>(() => new ResourceManager($"{SayWhat.Settings.Culture.Name}", SayWhat.Settings.ResourceAssembly));
         
         public static string GetText(string text)
         {

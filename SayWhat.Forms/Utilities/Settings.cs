@@ -17,14 +17,12 @@ namespace SayWhat.Forms.Utilities
     {
         public  CultureInfo Culture { get; private set; }
 
-        internal string BaseName { get; set; }
         internal Assembly ResourceAssembly { get; set; }
 
         internal Settings() { }
 
-        public void Initialize(string basename, Assembly resourceAssembly, string cultureKey = "en-US")
+        public void Initialize(Assembly resourceAssembly, string cultureKey = "en-US")
         {
-            BaseName = basename;
             ResourceAssembly = resourceAssembly;
             Culture = new CultureInfo(cultureKey);
         }
