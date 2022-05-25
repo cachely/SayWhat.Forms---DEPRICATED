@@ -7,12 +7,13 @@ namespace SayWhat.Forms.Controls
 {
     public class DynamicLabel : Label, IDisposable
     {
-        public static readonly BindableProperty ResourceNameProperty =
-          BindableProperty.Create(nameof(ResourceName),
-              typeof(string),
-              null,
-              string.Empty,
-              BindingMode.Default);
+        public static readonly BindableProperty ResourceNameProperty = 
+            BindableProperty.Create(
+                  nameof(ResourceName),
+                  typeof(string),
+                  typeof(DynamicLabel),
+                  string.Empty,
+                  BindingMode.Default);
 
         public DynamicLabel()
         {

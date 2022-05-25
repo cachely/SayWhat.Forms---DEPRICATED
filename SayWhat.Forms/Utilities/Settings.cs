@@ -10,11 +10,9 @@ namespace SayWhat.Forms.Utilities
     {
        private static Lazy<Settings> _settingsInstance = new Lazy<Settings>(() => new Settings());
 
-        public static Settings Settings
-        {
-            get; set; 
-        }
+        public static Settings Settings => _settingsInstance.Value;
     }
+
     public sealed class Settings
     {
         public  CultureInfo Culture { get; private set; }
