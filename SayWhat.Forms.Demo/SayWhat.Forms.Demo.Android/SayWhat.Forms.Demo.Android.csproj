@@ -86,5 +86,11 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SayWhat.Forms.Demo\SayWhat.Forms.Demo.csproj">
+      <Project>{4cc844f8-1d4c-4c27-a62f-9de56714ead7}</Project>
+      <Name>SayWhat.Forms.Demo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
