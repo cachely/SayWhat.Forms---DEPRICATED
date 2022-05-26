@@ -1,22 +1,21 @@
 ﻿using SayWhat.Forms.Messages;
 using SayWhat.Forms.Utilities;
-using System;
 using Xamarin.Forms;
 
 namespace SayWhat.Forms.Controls
 {
-    public class DynamicLabel : Label, IDisposable
+    public class LocalizedButton : Button
     {
         public static readonly BindableProperty TextResourceNameProperty =
-            BindableProperty.Create(
-                  nameof(TextResourceName),
-                  typeof(string),
-                  typeof(DynamicLabel),
-                  null,
-                  BindingMode.Default,
-                  propertyChanged: TextResourceNameChanged);
+           BindableProperty.Create(
+                 nameof(TextResourceName),
+                 typeof(string),
+                 typeof(LocalizedButton),
+                 null,
+                 BindingMode.Default,
+                 propertyChanged: TextResourceNameChanged);
 
-        public DynamicLabel()
+        public LocalizedButton()
         {
             MessagingCenter.Subscribe<object>(new object(), CultureChangedMessage.Message, (o) => UpdateText(this));
         }
@@ -28,20 +27,20 @@ namespace SayWhat.Forms.Controls
         }
 
         public static void TextResourceNameChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            DynamicLabel label = (DynamicLabel)bindable;
-            label.TextResourceName = (string) newValue;
-            SetText(label);
+        { 
+            LocalizedButton button = (LocalizedButton) bindable;
+            button.TextResourceName = (string)newValue;
+            SetText(button);
         }
 
-        public static void SetText(DynamicLabel label)
+        public static void SetText(LocalizedButton button)
         {
-            label.Text = DynamicLocalizer.GetText(label.TextResourceName);
+            button.Text = DynamicLocalizer.GetText(button.TextResourceName);
         }
 
-        public void UpdateText(DynamicLabel label)
+        public void UpdateText(LocalizedButton button)
         {
-            label.Text = DynamicLocalizer.GetText(label.TextResourceName);
+            button.Text = DynamicLocalizer.GetText(button.TextResourceName);
         }
 
         public void Dispose()

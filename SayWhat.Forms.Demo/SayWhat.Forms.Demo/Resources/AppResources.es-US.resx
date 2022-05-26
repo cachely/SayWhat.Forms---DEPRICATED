@@ -120,4 +120,10 @@
   <data name="HelloWorld" xml:space="preserve">
     <value>Hola Mundo. Esto es español.</value>
   </data>
+  <data name="PlaceholderText" xml:space="preserve">
+    <value>Marcador de posición</value>
+  </data>
+  <data name="UpdateLanguage" xml:space="preserve">
+    <value>Cambiar idioma</value>
+  </data>
 </root>

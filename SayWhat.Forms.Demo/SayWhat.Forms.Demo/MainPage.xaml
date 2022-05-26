@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sw="clr-namespace:SayWhat.Forms.Controls;assembly=SayWhat.Forms"
-             x:Class="SayWhat.Forms.Demo.MainPage">
-
+<sw:LocalizedContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sw="clr-namespace:SayWhat.Forms.Controls;assembly=SayWhat.Forms"
+    x:Class="SayWhat.Forms.Demo.MainPage">
     <StackLayout 
         HorizontalOptions="Center"
         VerticalOptions="Center">
-        <sw:DynamicLabel 
+        <sw:LocalizedLabel 
             TextResourceName="HelloWorld" 
             FontSize="18"/>
-        <Button 
-            Text="Update Labels Language" 
+        <sw:LocalizedEntry
+            PlaceHolderResourceName="PlaceholderText" />
+        <sw:LocalizedButton 
+            TextResourceName="UpdateLanguage" 
             Clicked="Button_Clicked" />
     </StackLayout>
-
-</ContentPage>
+</sw:LocalizedContentPage>
