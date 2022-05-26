@@ -61,7 +61,7 @@ namespace SayWhat.Forms.Demo.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is english.
+        ///   Looks up a localized string similar to Hello World. This is english..
         /// </summary>
         public static string HelloWorld {
             get {

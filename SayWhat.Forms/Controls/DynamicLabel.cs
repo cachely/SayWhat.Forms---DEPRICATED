@@ -7,41 +7,41 @@ namespace SayWhat.Forms.Controls
 {
     public class DynamicLabel : Label, IDisposable
     {
-        public static readonly BindableProperty ResourceTextNameProperty =
+        public static readonly BindableProperty TextResourceNameProperty =
             BindableProperty.Create(
-                  nameof(ResourceTextName),
+                  nameof(TextResourceName),
                   typeof(string),
                   typeof(DynamicLabel),
                   null,
                   BindingMode.Default,
-                  propertyChanged: ResourceTextNameChanged);
+                  propertyChanged: TextResourceNameChanged);
 
         public DynamicLabel()
         {
             MessagingCenter.Subscribe<object>(new object(), CultureChangedMessage.Message, (o) => UpdateText(this));
         }
 
-        public string ResourceTextName
+        public string TextResourceName
         {
-            get => GetValue(ResourceTextNameProperty) as string;
-            set => SetValue(ResourceTextNameProperty, value);
+            get => GetValue(TextResourceNameProperty) as string;
+            set => SetValue(TextResourceNameProperty, value);
         }
 
-        public static void ResourceTextNameChanged(BindableObject bindable, object oldValue, object newValue)
+        public static void TextResourceNameChanged(BindableObject bindable, object oldValue, object newValue)
         {
             DynamicLabel label = (DynamicLabel)bindable;
-            label.ResourceTextName = (string) newValue;
+            label.TextResourceName = (string) newValue;
             SetText(label);
         }
 
         public static void SetText(DynamicLabel label)
         {
-            label.Text = DynamicLocalizer.GetText(label.ResourceTextName);
+            label.Text = DynamicLocalizer.GetText(label.TextResourceName);
         }
 
         public void UpdateText(DynamicLabel label)
         {
-            label.Text = DynamicLocalizer.GetText(label.ResourceTextName);
+            label.Text = DynamicLocalizer.GetText(label.TextResourceName);
         }
 
         public void Dispose()

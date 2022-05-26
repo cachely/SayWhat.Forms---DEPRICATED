@@ -4,8 +4,15 @@
              xmlns:sw="clr-namespace:SayWhat.Forms.Controls;assembly=SayWhat.Forms"
              x:Class="SayWhat.Forms.Demo.MainPage">
 
-    <StackLayout>
-        <sw:DynamicLabel ResourceTextName="HelloWorld" />
+    <StackLayout 
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <sw:DynamicLabel 
+            TextResourceName="HelloWorld" 
+            FontSize="18"/>
+        <Button 
+            Text="Update Labels Language" 
+            Clicked="Button_Clicked" />
     </StackLayout>
 
 </ContentPage>

@@ -20,17 +20,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\en-US.Designer.cs">
+    <Compile Update="Resources\AppResources.en-US.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>en-US.resx</DependentUpon>
+      <DependentUpon>AppResources.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\AppResources.es-US.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.es-US.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\en-US.resx">
+    <EmbeddedResource Update="Resources\AppResources.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>en-US.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppResources.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.es-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.es-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 </Project>
