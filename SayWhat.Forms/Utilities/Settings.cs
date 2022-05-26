@@ -15,16 +15,19 @@ namespace SayWhat.Forms.Utilities
 
     public sealed class Settings
     {
-        public  CultureInfo Culture { get; private set; }
+        internal string ResourcePath { get; private set; }
+
+        internal  CultureInfo Culture { get; private set; }
 
         internal Assembly ResourceAssembly { get; set; }
 
         internal Settings() { }
 
-        public void Initialize(Assembly resourceAssembly, string cultureKey = "en-US")
+        public void Initialize(Assembly resourceAssembly, string resourcePath, string cultureKey = "en-US")
         {
             ResourceAssembly = resourceAssembly;
             Culture = new CultureInfo(cultureKey);
+            ResourcePath = resourcePath;
         }
 
         public void UpdateCulture(string cultureKey)

@@ -10,7 +10,7 @@ namespace SayWhat.Forms.Demo
             InitializeComponent();
 
             //Initialization
-            Utilities.SayWhat.Settings.Initialize(Assembly.GetAssembly(typeof(MainPage)), "en-US");
+            Utilities.SayWhat.Settings.Initialize(Assembly.GetAssembly(typeof(MainPage)),"SayWhat.Forms.Demo.Resources", "en-US");
 
             MainPage = new MainPage();
         }

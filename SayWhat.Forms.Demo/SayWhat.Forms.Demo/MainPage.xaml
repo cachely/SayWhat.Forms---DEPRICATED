@@ -5,7 +5,7 @@
              x:Class="SayWhat.Forms.Demo.MainPage">
 
     <StackLayout>
-        <sw:DynamicLabel ResourceName="HelloWorld" />
+        <sw:DynamicLabel ResourceTextName="HelloWorld" />
     </StackLayout>
 
 </ContentPage>
