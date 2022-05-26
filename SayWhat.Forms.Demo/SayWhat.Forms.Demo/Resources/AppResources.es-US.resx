@@ -123,6 +123,9 @@
   <data name="PlaceholderText" xml:space="preserve">
     <value>Marcador de posición</value>
   </data>
+  <data name="TranslatedTitle" xml:space="preserve">
+    <value>Título traducido</value>
+  </data>
   <data name="UpdateLanguage" xml:space="preserve">
     <value>Cambiar idioma</value>
   </data>

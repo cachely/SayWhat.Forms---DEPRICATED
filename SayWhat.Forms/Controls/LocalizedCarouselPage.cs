@@ -3,7 +3,7 @@ using SayWhat.Forms.Utilities;
 using Xamarin.Forms;
 
 namespace SayWhat.Forms.Controls
-{`
+{
     public class LocalizedCarouselPage : ContentPage 
     {
         public static readonly BindableProperty TitleResourceNameProperty =

@@ -126,4 +126,7 @@
   <data name="UpdateLanguage" xml:space="preserve">
     <value>Switch Language</value>
   </data>
+	<data name="Translated Title" xml:space="preserve">
+    <value>Translated Title</value>
+  </data>
 </root>
