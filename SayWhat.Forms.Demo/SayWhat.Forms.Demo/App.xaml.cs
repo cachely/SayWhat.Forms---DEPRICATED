@@ -13,7 +13,7 @@ namespace SayWhat.Forms.Demo
 
             //Initialization
             Utilities.SayWhat.Settings.Initialize(Assembly.GetAssembly(typeof(MainPage)), "SayWhat.Forms.Demo.Resources.AppResources", CurrentCulture);
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         public static void UpdateCulture()

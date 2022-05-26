@@ -35,12 +35,12 @@ namespace SayWhat.Forms.Controls
 
         public static void SetPlaceHolder(LocalizedFlyoutPage page)
         {
-            page.Title = DynamicLocalizer.GetText(page.Title);
+            page.Title = DynamicLocalizer.GetText(page.TitleResourceName);
         }
 
         public void UpdateText(LocalizedFlyoutPage page)
         {
-            page.Title = DynamicLocalizer.GetText(page.Title);
+            page.Title = DynamicLocalizer.GetText(page.TitleResourceName);
         }
 
         public void Dispose()

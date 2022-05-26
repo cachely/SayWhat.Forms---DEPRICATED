@@ -35,12 +35,12 @@ namespace SayWhat.Forms.Controls
 
         public static void SetPlaceHolder(LocalizedCarouselPage page)
         {
-            page.Title = DynamicLocalizer.GetText(page.Title);
+            page.Title = DynamicLocalizer.GetText(page.TitleResourceName);
         }
 
         public void UpdateText(LocalizedCarouselPage page)
         {
-            page.Title = DynamicLocalizer.GetText(page.Title);
+            page.Title = DynamicLocalizer.GetText(page.TitleResourceName);
         }
 
         public void Dispose()
