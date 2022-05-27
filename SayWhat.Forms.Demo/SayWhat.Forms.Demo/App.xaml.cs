@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using System.Reflection;
+using System.Resources;
 
 namespace SayWhat.Forms.Demo
 {
@@ -12,7 +13,8 @@ namespace SayWhat.Forms.Demo
             InitializeComponent();
 
             //Initialization
-            Utilities.SayWhat.Settings.Initialize(Assembly.GetAssembly(typeof(MainPage)), "SayWhat.Forms.Demo.Resources.AppResources", CurrentCulture);
+            var resourceManager = new ResourceManager("SayWhat.Forms.Demo.Resources.AppResources", Assembly.GetAssembly(typeof(MainPage)));
+            Utilities.SayWhat.Settings.Initialize(resourceManager, CurrentCulture);
             MainPage = new NavigationPage(new MainPage());
         }
 
