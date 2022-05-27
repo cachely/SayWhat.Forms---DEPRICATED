@@ -1,7 +1,7 @@
 ﻿using SayWhat.Forms.Messages;
 using System;
 using System.Globalization;
-using System.Reflection;
+using System.Resources;
 using Xamarin.Forms;
 
 namespace SayWhat.Forms.Utilities
@@ -13,21 +13,23 @@ namespace SayWhat.Forms.Utilities
         public static Settings Settings => _settingsInstance.Value;
     }
 
+    /// <summary>
+    /// Class is a singleton, please access through SayWhat.Settings property.
+    /// </summary>
     public sealed class Settings
     {
-        internal string ResourcePath { get; private set; }
+        /// <summary>
+        /// Turns on throwing exceptions in Release Configuration.
+        /// Otherwise Exceptions are only thrown in Debug Configuration.
+        /// </summary>
+        public bool AlwaysThrowExceptions { get; set; } = false;
 
         internal  CultureInfo Culture { get; private set; }
 
-        internal Assembly ResourceAssembly { get; set; }
-
-        internal Settings() { }
-
-        public void Initialize(Assembly resourceAssembly, string resourcePath, string cultureKey = "en-US")
+        public void Initialize(ResourceManager resourceManager, string cultureKey = "en-US")
         {
-            ResourceAssembly = resourceAssembly;
             Culture = new CultureInfo(cultureKey);
-            ResourcePath = resourcePath;
+            DynamicLocalizer.CreateResourceManager(resourceManager);
         }
 
         public void UpdateCulture(string cultureKey)

@@ -6,7 +6,8 @@ namespace SayWhat.Forms.Utilities
 {
     internal static class DynamicLocalizer
     {
-        private static Lazy<ResourceManager> resMgr = new Lazy<ResourceManager>(() => new ResourceManager($"{SayWhat.Settings.ResourcePath}", SayWhat.Settings.ResourceAssembly));
+        private static bool _throwExceptions = true;
+        private static Lazy<ResourceManager> _resMgr;
         
         public static string GetText(string text)
         {
@@ -15,15 +16,29 @@ namespace SayWhat.Forms.Utilities
 
             try
             {
-                var value = resMgr.Value.GetString(text, SayWhat.Settings.Culture) ?? string.Empty;
+                var value = _resMgr.Value.GetString(text, SayWhat.Settings.Culture) ?? string.Empty;
                 return value;
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
+                Debug.WriteLine(e.StackTrace);
+
+#if RELEASE
+                _throwExceptions = SayWhat.Settings.AlwaysThrowExceptions;
+#endif
+                if (_throwExceptions)
+                {
+                    throw e;
+                }
             }
 
             return string.Empty;
+        }
+
+        internal static void CreateResourceManager(ResourceManager resourceManager)
+        {
+            _resMgr = new Lazy<ResourceManager>(() => resourceManager);
         }
     }
 }
