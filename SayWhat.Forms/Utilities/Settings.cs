@@ -41,7 +41,7 @@ namespace SayWhat.Forms.Utilities
         }
 
         /// <summary>
-        /// Changes the culture based on the key provided.
+        /// Changes the culture based on the key provided. Else, defaults back to en-US
         /// </summary>
         /// <param name="cultureKey"></param>
         public void UpdateCulture(string cultureKey = "en-US")
