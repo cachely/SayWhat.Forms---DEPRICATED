@@ -3,36 +3,14 @@ Dynamic localization framework for Xamarin.Forms. Using wrapper classes for cont
 design patterns or UI implementation (c# or xaml). 
 
 ### Example 
+Full example is shown here:
+https://github.com/cachely/SayWhat.Forms/tree/main/SayWhat.Forms.Demo
 
-Recommended to initialize in the app.xaml.cs or app.cs file.
-//Initialization
+It is recommended to initialize in the app.xaml.cs or app.cs file as it is done here:
+https://github.com/cachely/SayWhat.Forms/blob/main/SayWhat.Forms.Demo/SayWhat.Forms.Demo/App.xaml.cs
+
+//Initialization<br>
 var resourceManager = new ResourceManager("SayWhat.Forms.Demo.Resources.AppResources", Assembly.GetAssembly(typeof(MainPage)));
 Utilities.SayWhat.Settings.Initialize(resourceManager, CurrentCulture);
 
-//Usage in xaml
-<?xml version="1.0" encoding="utf-8" ?>
-<sw:LocalizedContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sw="clr-namespace:SayWhat.Forms.Controls;assembly=SayWhat.Forms"
-    x:Class="SayWhat.Forms.Demo.MainPage"
-    TitleResourceName="TranslatedTitle">
-    <StackLayout 
-        HorizontalOptions="Center"
-        VerticalOptions="Center">
-        <sw:LocalizedLabel 
-            TextResourceName="HelloWorld" 
-            FontSize="18"/>
-        <sw:LocalizedEntry
-            PlaceHolderResourceName="PlaceholderText" />
-        <sw:LocalizedButton 
-            TextResourceName="UpdateLanguage" 
-            Clicked="Button_Clicked" />
-    </StackLayout>
-</sw:LocalizedContentPage>
-
-# SayWhat.Forms.Demo
-This includes examples for intializing the framework and usage in xaml which is easily translatable into c# implementation.
-
-
-
+Usage in xaml See: https://github.com/cachely/SayWhat.Forms/blob/7d90b920c7e2644547f8f9292405e0e14db9c15b/SayWhat.Forms.Demo/SayWhat.Forms.Demo/MainPage.xaml
