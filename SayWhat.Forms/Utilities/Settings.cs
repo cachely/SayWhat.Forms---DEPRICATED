@@ -6,6 +6,9 @@ using Xamarin.Forms;
 
 namespace SayWhat.Forms.Utilities
 {
+    /// <summary>
+    /// Provides access to the singleton Settings property.
+    /// </summary>
     public static class SayWhat
     {
        private static Lazy<Settings> _settingsInstance = new Lazy<Settings>(() => new Settings());
@@ -24,15 +27,24 @@ namespace SayWhat.Forms.Utilities
         /// </summary>
         public bool AlwaysThrowExceptions { get; set; } = false;
 
-        internal  CultureInfo Culture { get; private set; }
+        internal CultureInfo Culture { get; private set; }
 
+        /// <summary>
+        /// Initializes framework with provided resource manager.
+        /// </summary>
+        /// <param name="resourceManager">Applications resource manger will be assigned to a singleton internally</param>
+        /// <param name="cultureKey">Defaults to en-US, but can be overwritten</param>
         public void Initialize(ResourceManager resourceManager, string cultureKey = "en-US")
         {
             Culture = new CultureInfo(cultureKey);
             DynamicLocalizer.CreateResourceManager(resourceManager);
         }
 
-        public void UpdateCulture(string cultureKey)
+        /// <summary>
+        /// Changes the culture based on the key provided.
+        /// </summary>
+        /// <param name="cultureKey"></param>
+        public void UpdateCulture(string cultureKey = "en-US")
         {
             Culture = new CultureInfo(cultureKey);
             MessagingCenter.Send(new object(), CultureChangedMessage.Message);
