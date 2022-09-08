@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.402</Version>
+    <Version>1.0.403</Version>
     <Company>Ashley Proctor</Company>
 	<Authors>Ashley Proctor</Authors>
     <Description>A framework that utilizes your project's resource files to update your localized strings at will.</Description>

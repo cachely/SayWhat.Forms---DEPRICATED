@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+	  <TargetFrameworks>net6.0-ios;net6.0-android</TargetFrameworks>
+	  <UseMaui>True</UseMaui>
+	  <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -11,12 +12,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="SayWhat.Forms" Version="1.0.403" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\SayWhat.Forms\SayWhat.Forms.csproj" />
   </ItemGroup>
 
   <ItemGroup>
