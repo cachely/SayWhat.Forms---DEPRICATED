@@ -1,4 +1,6 @@
-# SayWhat.Forms
+# SayWhat.Forms - DEPRICATED
+Forms is going away. No further upkeep will be made. Please check out SayWhat.Maui for your updated projects. https://github.com/cachely/SayWhat.Maui
+
 Dynamic localization framework for Xamarin.Forms. Using wrapper classes for controls and pages, applications are able to update localized text to the UI regardless of chosen
 design patterns or UI implementation (c# or xaml). 
 <!-- wp:heading -->
